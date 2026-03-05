@@ -241,11 +241,12 @@ class TestRedisCacheConnection:
         """Test connection error handling."""
         cache = RedisCache(host="invalid-host", port=9999, password="wrong")
 
-        with patch("vidscript.cache.redis_cache.redis") as mock_redis_module:
-            mock_client = MagicMock()
-            mock_client.ping.side_effect = Exception("Connection refused")
-            mock_redis_module.Redis.return_value = mock_client
+        mock_redis_module = MagicMock()
+        mock_client = MagicMock()
+        mock_client.ping.side_effect = Exception("Connection refused")
+        mock_redis_module.Redis.return_value = mock_client
 
+        with patch.dict("sys.modules", {"redis": mock_redis_module}):
             with pytest.raises(RedisConnectionError, match="Gagal konek"):
                 cache._get_client()
 

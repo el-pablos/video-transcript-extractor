@@ -46,7 +46,7 @@ class RedisCache:
         self,
         host: Optional[str] = None,
         port: Optional[int] = None,
-        db: int = 0,
+        db: Optional[int] = None,
         username: Optional[str] = None,
         password: Optional[str] = None,
         ttl: int = DEFAULT_CACHE_TTL,

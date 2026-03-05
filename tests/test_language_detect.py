@@ -19,7 +19,7 @@ from vidscript.core.language_detect import (
 class TestDetectLanguageFromText:
     """Tests for detect_language_from_text."""
 
-    @patch("vidscript.core.language_detect.detect_langs")
+    @patch("langdetect.detect_langs")
     def test_detect_english(self, mock_detect):
         """Test detecting English text."""
         mock_result = MagicMock()
@@ -31,7 +31,7 @@ class TestDetectLanguageFromText:
         assert lang == "en"
         assert conf == 0.99
 
-    @patch("vidscript.core.language_detect.detect_langs")
+    @patch("langdetect.detect_langs")
     def test_detect_indonesian(self, mock_detect):
         """Test detecting Indonesian text."""
         mock_result = MagicMock()
@@ -52,7 +52,7 @@ class TestDetectLanguageFromText:
         with pytest.raises(LanguageDetectError, match="Teks kosong"):
             detect_language_from_text("   ")
 
-    @patch("vidscript.core.language_detect.detect_langs")
+    @patch("langdetect.detect_langs")
     def test_detect_no_results(self, mock_detect):
         """Test when langdetect returns no results."""
         mock_detect.return_value = []
