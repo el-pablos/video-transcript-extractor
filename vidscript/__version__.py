@@ -2,4 +2,4 @@
 
 __version__ = "1.0.0"
 __author__ = "VidScript Team"
-__repo__ = "https://github.com/your-username/video-transcript-extractor"
+__repo__ = "https://github.com/el-pablos/video-transcript-extractor"

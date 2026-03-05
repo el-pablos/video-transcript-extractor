@@ -51,9 +51,9 @@ dev = [
 vidscript = "vidscript.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/your-username/video-transcript-extractor"
-Repository = "https://github.com/your-username/video-transcript-extractor"
-Issues = "https://github.com/your-username/video-transcript-extractor/issues"
+Homepage = "https://github.com/el-pablos/video-transcript-extractor"
+Repository = "https://github.com/el-pablos/video-transcript-extractor"
+Issues = "https://github.com/el-pablos/video-transcript-extractor/issues"
 
 [tool.setuptools.packages.find]
 include = ["vidscript*"]
