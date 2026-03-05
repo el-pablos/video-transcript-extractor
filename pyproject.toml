@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vidscript"
+version = "1.0.0"
+description = "🎬 Advanced MP4 video transcript extractor CLI — akurat, cepat, multi-format output dengan Redis caching"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "VidScript Team"},
+]
+keywords = ["python", "cli", "transcription", "whisper", "mp4", "speech-to-text", "redis", "diarization", "subtitle", "nlp"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Multimedia :: Video",
+]
+
+dependencies = [
+    "faster-whisper>=1.0.0",
+    "ffmpeg-python>=0.2.0",
+    "pyannote.audio>=3.1.0",
+    "redis>=5.0.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+    "pyfiglet>=1.0.0",
+    "colorama>=0.4.6",
+    "langdetect>=1.0.9",
+    "lz4>=4.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.12.0",
+]
+
+[project.scripts]
+vidscript = "vidscript.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/your-username/video-transcript-extractor"
+Repository = "https://github.com/your-username/video-transcript-extractor"
+Issues = "https://github.com/your-username/video-transcript-extractor/issues"
+
+[tool.setuptools.packages.find]
+include = ["vidscript*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["vidscript"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 90
