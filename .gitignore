@@ -1,0 +1,46 @@
+# Environment & Secrets
+.env
+.env.*
+*.env
+config/secrets.py
+
+# Logs
+logs/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Media files
+*.mp4
+*.wav
+*.mp3
+
+# Whisper models
+models/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Prompt file
+PROMPT.md
